@@ -2,7 +2,7 @@ package com.example.password_validator;
 
 class Validator {
 
-    static int pwValidator(String s){
+    static int basicValidator(String s){
 
         int rules = 0;
 
