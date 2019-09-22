@@ -24,28 +24,39 @@ public class testValidator {
 
     @Test
     public void pwWorks(){
-        // Tests if the password passes validator
+        // Tests if the password passes basic validator
         int x = basicValidator("test1test1test");
         assertEquals(0,x);
     }
 
     @Test
     public void specialCharacter(){
-        int x = complexValidator("Thisword123*");
-        assertEquals(0,x);
+        // Tests if the string has no special character
+        int x = complexValidator("Thisword123");
+        assertEquals(1,x);
     }
 
     @Test
     public void noSpecialCharacterNoCapital(){
+        // Tests if the string has no capital and no special character
         int x = complexValidator("thisword123");
         assertEquals(2,x);
     }
 
     @Test
     public void Number(){
+        // Tests if the string has no number
         int x = complexValidator("Thisword*jjj");
         assertEquals(1,x);
     }
+
+    @Test
+    public void Capital(){
+        // Tests if the string has no capital
+        int x = complexValidator("thisword23*");
+        assertEquals(1,x);
+    }
+
 
 
 }

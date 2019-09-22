@@ -22,6 +22,23 @@ class Validator {
 
         int rules = 0;
 
+
+        if(!s.matches(".{8,}")){
+            rules++;
+        }
+        if(s.toLowerCase().matches("(password)")){
+            rules++;
+        }
+        if(!s.matches(".*[0-9].*")){
+            rules++;
+        }
+        if(!s.matches(".*[!@#$%^&*(),.?\":{}|<>].*")){
+            rules++;
+        }
+        if(!s.matches(".*[A-Z]+.*")){
+            rules++;
+        }
+
         return rules;
 
     }
