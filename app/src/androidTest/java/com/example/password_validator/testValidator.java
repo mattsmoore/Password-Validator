@@ -3,6 +3,7 @@ package com.example.password_validator;
 import org.junit.Test;
 
 import static com.example.password_validator.Validator.basicValidator;
+import static com.example.password_validator.Validator.complexValidator;
 import static junit.framework.TestCase.assertEquals;
 
 public class testValidator {
@@ -27,5 +28,24 @@ public class testValidator {
         int x = basicValidator("test1test1test");
         assertEquals(0,x);
     }
+
+    @Test
+    public void specialCharacter(){
+        int x = complexValidator("Thisword123*");
+        assertEquals(0,x);
+    }
+
+    @Test
+    public void noSpecialCharacterNoCapital(){
+        int x = complexValidator("thisword123");
+        assertEquals(2,x);
+    }
+
+    @Test
+    public void Number(){
+        int x = complexValidator("Thisword*jjj");
+        assertEquals(1,x);
+    }
+
 
 }

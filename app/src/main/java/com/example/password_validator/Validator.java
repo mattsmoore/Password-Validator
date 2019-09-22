@@ -6,15 +6,23 @@ class Validator {
 
         int rules = 0;
 
-        if(s.length() < 8){
+        if(!s.matches(".{8,}")){
             rules++;
         }
-        if(s.toLowerCase().equals("password")){
+        if(s.toLowerCase().matches("(password)")){
             rules++;
         }
 
         return rules;
 
+    }
+
+
+    static int complexValidator(String s){
+
+        int rules = 0;
+
+        return rules;
 
     }
 }
