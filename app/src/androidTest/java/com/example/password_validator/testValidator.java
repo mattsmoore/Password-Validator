@@ -23,7 +23,7 @@ public class testValidator {
 
     @Test
     public void pwWorks(){
-        // Tests if the password passes
+        // Tests if the password passes validator
         int x = pwValidator("test1test1test");
         assertEquals(0,x);
     }
