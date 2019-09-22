@@ -1,10 +1,19 @@
 package com.example.password_validator;
 
-public class Validator {
+class Validator {
 
-    public static int pwValidator(String s){
+    static int pwValidator(String s){
 
+        int rules = 0;
 
+        if(s.length() < 8){
+            rules++;
+        }
+        if(s.toLowerCase().equals("password")){
+            rules++;
+        }
+
+        return rules;
 
 
     }
