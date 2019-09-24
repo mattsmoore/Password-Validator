@@ -12,6 +12,10 @@ import android.widget.TextView;
 import static com.example.password_validator.Validator.basicValidator;
 import static com.example.password_validator.Validator.complexValidator;
 
+/* Matthew Moore
+    B00767194
+ */
+
 
 public class MainActivity extends AppCompatActivity {
 

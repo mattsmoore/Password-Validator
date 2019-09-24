@@ -1,9 +1,15 @@
 package com.example.password_validator;
 
+/* Matthew Moore
+    B00767194
+ */
+// ESPRESSO TESTS
 
+import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.widget.TextView;
 
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
@@ -44,7 +50,7 @@ public class pwTest {
                                         0),
                                 0),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("TestPass123$*"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText("TestPass123$$"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.button), withText("Enter"),
@@ -56,18 +62,11 @@ public class pwTest {
                         isDisplayed()));
         appCompatButton.perform(click());
 
-        ViewInteraction textView = onView(
-                allOf(withId(R.id.message), withText("Enter Password"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                1),
-                        isDisplayed()));
-        textView.check(matches(withText("Complex Password")));
+        SystemClock.sleep(1000);
+        onView(withId(R.id.message)).check(matches(withText("Complex Password")));
 
         ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.pwInput), withText("TestPass123$*"),
+                allOf(withId(R.id.pwInput), withText("TestPass123$$"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -77,17 +76,17 @@ public class pwTest {
         appCompatEditText2.perform(click());
 
         ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.pwInput), withText("TestPass123$*"),
+                allOf(withId(R.id.pwInput), withText("TestPass123$$"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 0),
                         isDisplayed()));
-        appCompatEditText3.perform(replaceText("superwoman"));
+        appCompatEditText3.perform(replaceText("TesPass222"));
 
         ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.pwInput), withText("superwoman"),
+                allOf(withId(R.id.pwInput), withText("TesPass222"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -106,67 +105,20 @@ public class pwTest {
                         isDisplayed()));
         appCompatButton2.perform(click());
 
-        ViewInteraction textView2 = onView(
-                allOf(withId(R.id.message), withText("Enter Password"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                1),
-                        isDisplayed()));
-        textView2.check(matches(withText("Basic Password")));
+        SystemClock.sleep(1000);
+        onView(withId(R.id.message)).check(matches(withText("Basic Password")));
 
         ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.pwInput), withText("superwoman"),
+                allOf(withId(R.id.pwInput), withText("TesPass222"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 0),
                         isDisplayed()));
-        appCompatEditText5.perform(click());
+        appCompatEditText5.perform(replaceText("bad"));
 
         ViewInteraction appCompatEditText6 = onView(
-                allOf(withId(R.id.pwInput), withText("superwoman"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatEditText6.perform(replaceText("superwo"));
-
-        ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.pwInput), withText("superwo"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatEditText7.perform(closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText8 = onView(
-                allOf(withId(R.id.pwInput), withText("superwo"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatEditText8.perform(click());
-
-        ViewInteraction appCompatEditText9 = onView(
-                allOf(withId(R.id.pwInput), withText("superwo"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatEditText9.perform(replaceText("bad"));
-
-        ViewInteraction appCompatEditText10 = onView(
                 allOf(withId(R.id.pwInput), withText("bad"),
                         childAtPosition(
                                 childAtPosition(
@@ -174,7 +126,7 @@ public class pwTest {
                                         0),
                                 0),
                         isDisplayed()));
-        appCompatEditText10.perform(closeSoftKeyboard());
+        appCompatEditText6.perform(closeSoftKeyboard());
 
         ViewInteraction appCompatButton3 = onView(
                 allOf(withId(R.id.button), withText("Enter"),
@@ -186,15 +138,8 @@ public class pwTest {
                         isDisplayed()));
         appCompatButton3.perform(click());
 
-        ViewInteraction textView3 = onView(
-                allOf(withId(R.id.message), withText("Enter Password"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                1),
-                        isDisplayed()));
-        textView3.check(matches(withText("Password Not Strong")));
+        SystemClock.sleep(1000);
+        onView(withId(R.id.message)).check(matches(withText("Password Not Strong")));
     }
 
     private static Matcher<View> childAtPosition(

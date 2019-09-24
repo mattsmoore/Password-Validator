@@ -1,5 +1,12 @@
 package com.example.password_validator;
 
+/* Matthew Moore
+    B00767194
+
+ Validator class with validation methods
+
+ */
+
 class Validator {
 
     // basic validator

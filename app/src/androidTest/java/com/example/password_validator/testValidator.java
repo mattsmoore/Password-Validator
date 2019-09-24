@@ -1,5 +1,12 @@
 package com.example.password_validator;
 
+/* Matthew Moore
+    B00767194
+
+ Tests for Validation methods
+
+ */
+
 
 import org.junit.Test;
 
