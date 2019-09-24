@@ -1,5 +1,6 @@
 package com.example.password_validator;
 
+
 import org.junit.Test;
 
 import static com.example.password_validator.Validator.basicValidator;
@@ -56,6 +57,8 @@ public class testValidator {
         int x = complexValidator("thisword23*");
         assertEquals(1,x);
     }
+
+
 
 
 

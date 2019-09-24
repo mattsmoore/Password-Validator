@@ -17,6 +17,8 @@ class Validator {
             rules++;
         }
 
+
+
         return rules;
 
     }
@@ -33,7 +35,7 @@ class Validator {
         }
 
         // is not a variation of the word "Password"
-        if(s.toLowerCase().matches("(password)")){
+        if(s.toLowerCase().matches("password")){
             rules++;
         }
 
